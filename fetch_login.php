@@ -1,18 +1,18 @@
 <?php
     include("connection.php");
 
-    $login = $_POST["txtLogin"];
-    $password = $_POST["txtPassword"];
+    $username = $_POST["username"];
+    $password = $_POST["password"];
 
-    $sql = "SELECT * FROM login WHERE username='$login'";
+    $sql = "SELECT * FROM users WHERE username='$username'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             if ($row["password"] == $password) {
-                header("Location: users_lst.php");
+                header("Location: home.php");
                 session_start();
-                $_SESSION["id"] = intval($row["id"]);
+                $_SESSION["id_username"] = intval($row["id_username"]);
                 $_SESSION["role"] = intval($row["role"]);
             }
             else {
