@@ -18,6 +18,11 @@
 --
 -- Table structure for table `enfermeiro`
 --
+DROP DATABASE IF EXISTS hospital;
+
+CREATE DATABASE hospital;
+
+use hospital;
 
 DROP TABLE IF EXISTS `enfermeiro`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -83,6 +88,13 @@ INSERT INTO `medico` VALUES (1,'Roberto',3711,'144.385.988-00','1980-05-01 03:00
 /*!40000 ALTER TABLE `medico` ENABLE KEYS */;
 UNLOCK TABLES;
 
+DROP TABLE IF EXISTS `users`;
+
+CREATE TABLE users(
+	id_user INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(100),
+    password VARCHAR(100)
+);
 --
 -- Table structure for table `operacao_paciente_enfermeiro_medico_sala_cirurgia`
 --
