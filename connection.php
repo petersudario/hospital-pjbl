@@ -1,7 +1,7 @@
 <?php
         $servername = "localhost";
         $username = "root"; // PUC => root
-        $password = "A992176566kemi_";
+        $password = "root";
         $dbname = "hospital";
 
         $conn = new mysqli($servername, $username, $password, $dbname);
