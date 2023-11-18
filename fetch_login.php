@@ -13,7 +13,7 @@
                 header("Location: home.php");
                 session_start();
                 $_SESSION["id_username"] = intval($row["id_username"]);
-                $_SESSION["role"] = intval($row["role"]);
+                $_SESSION["role"] = $row["role"];
             }
             else {
 ?>

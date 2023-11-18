@@ -13,6 +13,7 @@
     $result = $conn->query($sql);
 ?>
         <div class="text-left text-3xl font-bold mb-4 mt-4 ml-4">Médicos</div>
+        <a href="./medico_create.php" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 inline-block">Cadastrar</a>
         <div class="flex flex-wrap -mx-4 mx-auto">
             <?php 
             if ($result->num_rows > 0) {
@@ -34,6 +35,7 @@
                         </p>
                         <a href="medico_show.php?ID_Medico=<?php echo $row['ID_Medico'] ?>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 inline-block">Ver detalhes</a>
                         <a href="./medico_edit.php?ID_Medico=<?php echo $row['ID_Medico'] ?>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 inline-block">Editar</a>
+                        <a href="./medico_edit.php?ID_Medico=<?php echo $row['ID_Medico'] ?>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 inline-block">Excluir</a>
                     </div>
                 </div>
             </div>
