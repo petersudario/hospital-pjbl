@@ -9,7 +9,7 @@
         include("../connection.php");
         include("../components/nav.php");
 
-        $sql = "SELECT * FROM Medico";
+        $sql = "SELECT * FROM Enfermeiro";
         
         $result = $conn->query($sql);
     
@@ -19,8 +19,8 @@
             header("Location: index.php");
         }
 
-        $id = $_GET["ID_Medico"];
-        $sql = "SELECT * FROM Medico WHERE ID_Medico = $id";
+        $id = $_GET["ID_Enfermeiro"];
+        $sql = "SELECT * FROM Enfermeiro WHERE ID_Enfermeiro = $id";
         $result = $conn->query($sql);
         
         if ($result->num_rows > 0) {
@@ -29,15 +29,15 @@
             while($row = $result->fetch_assoc()) {
                 echo '<div class="bg-white shadow-md rounded p-4 mb-4">';
                 echo "id: $id<br>";
-                echo "Nome: {$row['Nome_Medico']}<br>";
-                echo "CRM: {$row['CRM']}<br>";
-                echo "CPF: {$row['CPF_Medico']}<br>";
-                echo "Data de nascimento: {$row['Data_Nascimento_Medico']}<br>";
-                echo "Gênero: {$row['Genero_Medico']}<br>";
-                echo "Telefone: {$row['Telefone_Medico']}<br>";
-                echo "E-mail: {$row['E_mail_Medico']}<br>";
-                echo "RG: {$row['RG_Medico']}<br>";
-                echo "Endereço: ". $row['Logradouro_Medico']." ".$row['Nome_Endereco_Medico']." ".$row['Numero_Endereco_Medico']." ".$row['Complemento_Endereco_Medico'];
+                echo "Nome: {$row['Nome_Enfermeiro']}<br>";
+                echo "CIP: {$row['CIP']}<br>";
+                echo "CPF: {$row['CPF_Enfermeiro']}<br>";
+                echo "Data de nascimento: {$row['Data_Nascimento_Enfermeiro']}<br>";
+                echo "Gênero: {$row['Genero_Enfermeiro']}<br>";
+                echo "Telefone: {$row['Telefone_Enfermeiro']}<br>";
+                echo "E-mail: {$row['E_mail_Enfermeiro']}<br>";
+                echo "RG: {$row['RG_Enfermeiro']}<br>";
+                echo "Endereço: ". $row['Logradouro_Enfermeiro']." ".$row['Nome_Endereco_Enfermeiro']." ".$row['Numero_Endereco_Enfermeiro']." ".$row['Complemento_Endereco_Enfermeiro'];
                 echo '</div>';
             }
             echo '</div>';
@@ -48,14 +48,14 @@
 
     ?>
     <h1 class="text-2xl font-bold mb-4">Editar Usuário</h1>
-    <form name="form1" id="form1" method="post" action="./medico_edit_php.php" class="max-w-md mx-auto">
+    <form name="form1" id="form1" method="post" action="./enfermeiro_edit_php.php" class="max-w-md mx-auto">
         <div class="mb-4">
             <label for="txtNome" class="block mb-2">Nome:</label>
             <input type="text" name="txtNome" id="txtNome" value="<?php ?>" class="w-full px-4 py-2 border rounded">
         </div>
         <div class="mb-4">
-            <label for="txtCrm" class="block mb-2">CRM:</label>
-            <input type="text" name="txtCrm" id="txtCrm" value="<?php ?>" class="w-full px-4 py-2 border rounded">
+            <label for="txtCip" class="block mb-2">CRM:</label>
+            <input type="text" name="txtCip" id="txtCip" value="<?php ?>" class="w-full px-4 py-2 border rounded">
         </div>
         <input type="hidden" name="hidId" value="<?php echo $id ?>">
         <div class="mb-4">

@@ -15,14 +15,14 @@
     }
     else {
         $id = $_GET["id"];
-        $sql = "DELETE FROM medico WHERE ID_Medico = $id";
+        $sql = "DELETE FROM enfermeiro WHERE ID_Enfermeiro = $id";
         $result = $conn->query($sql);
 
         if ($result === TRUE) {
 ?>
 <script>
     alert('Usuário removido com sucesso!!!');
-    location.href = './medico_view.php';
+    location.href = './enfermeiro_view.php';
 </script>
 <?php
         }

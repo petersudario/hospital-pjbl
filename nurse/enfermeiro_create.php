@@ -9,20 +9,20 @@
         include("../connection.php");
         include("../components/nav.php");
 
-        $sql = "SELECT * FROM Medico";
+        $sql = "SELECT * FROM Enfermeiro";
         
         $result = $conn->query($sql);
     ?>
 
         <h1 class="text-2xl font-bold mb-4">Cadastrar Usuário</h1>
-        <form name="form1" id="form1" method="post" action="./medico_create_php.php" class="max-w-md mx-auto">
+        <form name="form1" id="form1" method="post" action="./enfermeiro_create_php.php" class="max-w-md mx-auto">
             <div class="mb-4">
                 <label for="txtNome" class="block">Nome:</label>
                 <input type="text" name="txtNome" id="txtNome" value="<?php ?>" class="w-full px-4 py-2 border border-gray-300 rounded-md">
             </div>
             <div class="mb-4">
-                <label for="txtCrm" class="block">CRM:</label>
-                <input type="text" name="txtCrm" id="txtCrm" value="<?php ?>" class="w-full px-4 py-2 border border-gray-300 rounded-md">
+                <label for="txtCip" class="block">CIP:</label>
+                <input type="text" name="txtCip" id="txtCip" value="<?php ?>" class="w-full px-4 py-2 border border-gray-300 rounded-md">
             </div>
             <div class="mb-4">
                 <label for="txtCpf" class="block">CPF:</label>
@@ -67,8 +67,4 @@
             <input type="submit" value="Enviar" class="w-full px-4 py-2 bg-green-500 text-white rounded-md">
         </form>
     </body>
-    
-    <?php
-        include("../components/footer.php");
-    ?>
 </html>

@@ -83,22 +83,22 @@ CREATE TABLE Operacao_Paciente_Enfermeiro_Medico_Sala (
 ALTER TABLE Operacao_Paciente_Enfermeiro_Medico_Sala ADD CONSTRAINT FK_Operacao_Paciente_Enfermeiro_Medico_Sala_1
   FOREIGN KEY (fk_Paciente_ID_Paciente)
   REFERENCES Paciente (ID_Paciente)
-  ON DELETE NO ACTION;
+  ON DELETE CASCADE;
  
 ALTER TABLE Operacao_Paciente_Enfermeiro_Medico_Sala ADD CONSTRAINT FK_Operacao_Paciente_Enfermeiro_Medico_Sala_2
   FOREIGN KEY (fk_Enfermeiro_ID_Enfermeiro)
   REFERENCES Enfermeiro (ID_Enfermeiro)
-  ON DELETE NO ACTION;
+  ON DELETE CASCADE;
  
 ALTER TABLE Operacao_Paciente_Enfermeiro_Medico_Sala ADD CONSTRAINT FK_Operacao_Paciente_Enfermeiro_Medico_Sala_3
   FOREIGN KEY (fk_Medico_ID_Medico)
   REFERENCES Medico (ID_Medico)
-  ON DELETE NO ACTION;
+  ON DELETE CASCADE;
  
 ALTER TABLE Operacao_Paciente_Enfermeiro_Medico_Sala ADD CONSTRAINT FK_Operacao_Paciente_Enfermeiro_Medico_Sala_4
   FOREIGN KEY (fk_Sala_ID_Sala)
   REFERENCES Sala (ID_Sala)
-  ON DELETE NO ACTION;
+  ON DELETE CASCADE;
 
 
 INSERT INTO Medico (Nome_Medico, CRM, CPF_Medico, Data_Nascimento_Medico, Genero_Medico, Telefone_Medico, Numero_Endereco_Medico, Complemento_Endereco_Medico, Nome_Endereco_Medico, Logradouro_Medico, E_mail_Medico, RG_Medico)

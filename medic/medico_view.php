@@ -31,11 +31,11 @@
                             RG: <?php echo $row["RG_Medico"] ?><br>
                             Telefone: <?php echo $row["Telefone_Medico"] ?><br>
                             E-mail: <?php echo $row["E_mail_Medico"] ?><br>
-                            Endereço: <?php echo "Nome: ". $row['Logradouro_Medico']. " " .$row['Nome_Endereco_Medico']. " ".$row['Numero_Endereco_Medico']. " ".$row['Complemento_Endereco_Medico'] ?>
+                            Endereço: <?php echo $row['Logradouro_Medico']. " " .$row['Nome_Endereco_Medico']. " ".$row['Numero_Endereco_Medico']. " ".$row['Complemento_Endereco_Medico'] ?>
                         </p>
                         <a href="medico_show.php?ID_Medico=<?php echo $row['ID_Medico'] ?>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 inline-block">Ver detalhes</a>
                         <a href="./medico_edit.php?ID_Medico=<?php echo $row['ID_Medico'] ?>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 inline-block">Editar</a>
-                        <a href="./medico_edit.php?ID_Medico=<?php echo $row['ID_Medico'] ?>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 inline-block">Excluir</a>
+                        <input onclick="deletar(<?php echo $row['ID_Medico'] ?>)" type="button" value="Excluir" href="#">
                     </div>
                 </div>
             </div>
@@ -44,7 +44,13 @@
             }
             ?>  
         </div>
-    
+        <script>
+            function deletar(id) {
+                if (confirm("Tem certeza que deseja excluir este registro?")) {
+                    location.href = "./medico_delete.php?id=" + id;
+                }
+            }
+        </script>
     </body>
 
     <?php
