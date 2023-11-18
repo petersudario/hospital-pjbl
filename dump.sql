@@ -252,3 +252,39 @@ INSERT INTO users (username, password, role) VALUES ('patient3', 'patient3_passw
 INSERT INTO users (username, password, role) VALUES ('doctor4', 'doctor4_password', 'doctor');
 INSERT INTO users (username, password, role) VALUES ('nurse4', 'nurse4_password', 'nurse');
 -- Add more user inserts as needed
+
+
+DELIMITER //
+
+CREATE PROCEDURE SalaDeCirurgia(IN SalaID INT)
+BEGIN
+    SELECT
+        Operacao_Paciente_Enfermeiro_Medico_Sala.*,
+        Sala.Bloco_Sala,
+        Sala.Numero_Sala,
+        Medico.Nome_Medico,
+        Medico.Genero_Medico,
+        Medico.E_mail_Medico,
+        Medico.RG_Medico,
+        Paciente.Nome_Paciente,
+        Paciente.Data_Nascimento_Paciente,
+        Paciente.Condicao_Paciente,
+        Paciente.Telefone_Emergencia_Paciente,
+        Paciente.Logradouro_Paciente,
+        Enfermeiro.Nome_Enfermeiro,
+        Enfermeiro.CIP,
+        Enfermeiro.Genero_Enfermeiro,
+        Enfermeiro.Telefone_Enfermeiro,
+        Enfermeiro.E_mail_Enfermeiro,
+        tipo.tipo
+    FROM
+        Operacao_Paciente_Enfermeiro_Medico_Sala
+    JOIN Sala ON Operacao_Paciente_Enfermeiro_Medico_Sala.fk_Sala_ID_Sala = Sala.ID_Sala
+    JOIN tipo ON tipo.ID_tipo = sala.fk_Tipo_ID_tipo
+    LEFT JOIN Medico ON Operacao_Paciente_Enfermeiro_Medico_Sala.fk_Medico_ID_Medico = Medico.ID_Medico
+    LEFT JOIN Paciente ON Operacao_Paciente_Enfermeiro_Medico_Sala.fk_Paciente_ID_Paciente = Paciente.ID_Paciente
+    LEFT JOIN Enfermeiro ON Operacao_Paciente_Enfermeiro_Medico_Sala.fk_Enfermeiro_ID_Enfermeiro = Enfermeiro.ID_Enfermeiro
+    WHERE Sala.ID_Sala = SalaID;
+END //
+
+DELIMITER ;
