@@ -27,7 +27,7 @@
                         CPF_Paciente = '$cpf',
                         Data_Nascimento_Paciente = '$dataNascimento',
                         Genero_Paciente = '$genero',
-                        Telefone_Paciente = '$telefone',
+                        Telefone_Emergencia_Paciente = '$telefone',
                         Numero_Endereco_Paciente = '$numeroEndereco',
                         Complemento_Endereco_Paciente = '$complementoEndereco',
                         Nome_Endereco_Paciente = '$nomeEndereco',

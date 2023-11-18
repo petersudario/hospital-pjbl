@@ -5,7 +5,7 @@
     <body>
         <?php
             include("../connection.php");
-
+            
 
             $id = $_POST["hidId"];
             $bloco = $_POST["txtBloco"];
@@ -15,7 +15,7 @@
             $sql = "UPDATE Sala SET 
                         Bloco_Sala = '$bloco',
                         Numero_Sala = '$numero',
-                        fk_Tipo_ID_tipo = '$tipo',
+                        fk_Tipo_ID_tipo = '$tipo'
                     WHERE ID_Sala=$id";
         
             $result = $conn->query($sql);

@@ -1,19 +1,6 @@
 <?php
     include("../connection.php");
 
-    session_start();
-    if (!isset($_SESSION["id"])) {
-        header("Location: ../index.php");
-    }
-    else if ($_SESSION["role"] != "admin") {
-?>
-<script>
-    alert("Você não tem permissão de exclusão no sistema");
-    history.go(-1);
-</script>
-<?php
-    }
-    else {
         $id = $_GET["id"];
         $sql = "DELETE FROM Sala WHERE ID_Sala = $id";
         $result = $conn->query($sql);
@@ -34,5 +21,4 @@
 </script>
 <?php
         }
-    }
 ?>

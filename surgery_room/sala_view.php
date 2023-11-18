@@ -8,8 +8,8 @@
     include("../connection.php");
     include("../components/nav.php");
 
-    $sql = "SELECT * FROM Sala";
-    
+    $sql = "SELECT ID_Sala, Bloco_Sala, Numero_Sala, tipo.tipo FROM Sala INNER JOIN Tipo ON fk_Tipo_ID_tipo = ID_tipo";
+
     $result = $conn->query($sql);
 ?>
         <div class="text-left text-3xl font-bold mb-4 mt-4 ml-4">Salas</div>
@@ -26,7 +26,7 @@
                         <p class="text-gray-700 text-base">
                             Bloco: <?php echo $row["Bloco_Sala"] ?><br>
                             Numero: <?php echo $row["Numero_Sala"] ?><br>
-                            Tipo de sala: <?php echo $row["fk_Tipo_ID_tipo"] ?><br>
+                            Tipo de sala: <?php echo $row["tipo"] ?><br>
                         </p>
                         <a href="sala_show.php?ID_Sala=<?php echo $row['ID_Sala'] ?>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 inline-block">Ver detalhes</a>
                         <a href="./sala_edit.php?ID_Sala=<?php echo $row['ID_Sala'] ?>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 inline-block">Editar</a>

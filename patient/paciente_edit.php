@@ -20,11 +20,6 @@
         $result = $conn->query($sql);
     
 
-        session_start();
-        if (!isset($_SESSION["id"])) {
-            header("Location: ../index.php");
-        }
-
         $id = $_GET["ID_Paciente"];
         $sql = "SELECT * FROM Paciente WHERE ID_Paciente = $id";
         $result = $conn->query($sql);
@@ -40,7 +35,7 @@
                 echo "CPF: {$row['CPF_Paciente']}<br>";
                 echo "Data de nascimento: {$row['Data_Nascimento_Paciente']}<br>";
                 echo "Gênero: {$row['Genero_Paciente']}<br>";
-                echo "Telefone: {$row['Telefone_Paciente']}<br>";
+                echo "Telefone: {$row['Telefone_Emergencia_Paciente']}<br>";
                 echo "E-mail: {$row['E_mail_Paciente']}<br>";
                 echo "RG: {$row['RG_Paciente']}<br>";
                 echo "Endereço: ". $row['Logradouro_Paciente']." ".$row['Nome_Endereco_Paciente']." ".$row['Numero_Endereco_Paciente']." ".$row['Complemento_Endereco_Paciente'];
@@ -52,7 +47,7 @@
 
     ?>
     <div class="grid justify-center">
-
+    <form name="form1" id="form1" method="post" action="./paciente_edit_php.php" class="max-w-md mx-auto">
         <div class="mb-4">
             <label for="txtNome" class="block mb-2">Nome:</label>
             <input type="text" name="txtNome" id="txtNome" value="<?php ?>" class="w-full px-4 py-2 border rounded">

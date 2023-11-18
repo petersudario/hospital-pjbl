@@ -18,12 +18,6 @@
         $sql = "SELECT * FROM Medico";
         
         $result = $conn->query($sql);
-    
-
-        session_start();
-        if (!isset($_SESSION["id"])) {
-            header("Location: ../index.php");
-        }
 
         $id = $_GET["ID_Medico"];
         $sql = "SELECT * FROM Medico WHERE ID_Medico = $id";
@@ -52,6 +46,7 @@
 
     ?>
     <div class="grid justify-center">
+    <form name="form1" id="form1" method="post" action="./medico_edit_php.php" class="max-w-md mx-auto">
 
         <div class="mb-4">
             <label for="txtNome" class="block mb-2">Nome:</label>

@@ -1,4 +1,5 @@
 DROP DATABASE IF EXISTS hospital;
+
 create database hospital;
 
 use hospital;
@@ -27,7 +28,7 @@ CREATE TABLE Medico (
 );
 
 CREATE TABLE Paciente (
-  ID_Paciente INT PRIMARY KEY,
+  ID_Paciente INT PRIMARY KEY AUTO_INCREMENT,
   Data_Nascimento_Paciente TIMESTAMP,
   Condicao_Paciente VARCHAR(20),
   Telefone_Emergencia_Paciente VARCHAR(11),
@@ -43,7 +44,7 @@ CREATE TABLE Paciente (
 );
 
 CREATE TABLE Enfermeiro (
-  ID_Enfermeiro INT PRIMARY KEY,
+  ID_Enfermeiro INT PRIMARY KEY AUTO_INCREMENT,
   Nome_Enfermeiro VARCHAR(100),
   CIP VARCHAR(8),
   Data_Nascimento_Enfermeiro TIMESTAMP,
@@ -59,7 +60,7 @@ CREATE TABLE Enfermeiro (
 );
 
 CREATE TABLE Tipo (
-  ID_tipo INT PRIMARY KEY,
+  ID_tipo INT PRIMARY KEY AUTO_INCREMENT,
   tipo VARCHAR(50)
 );
 
@@ -68,10 +69,8 @@ CREATE TABLE Sala (
   Numero_Sala INT,
   ID_Sala INT PRIMARY KEY,
   fk_Tipo_ID_tipo INT,
-  FOREIGN KEY (fk_Tipo_ID_tipo) REFERENCES Tipo (ID_tipo) ON DELETE RESTRICT
+  FOREIGN KEY (fk_Tipo_ID_tipo) REFERENCES Tipo (ID_tipo) ON DELETE CASCADE ON UPDATE CASCADE
 );
-
-
 
 CREATE TABLE Operacao_Paciente_Enfermeiro_Medico_Sala (
   fk_Paciente_ID_Paciente INT,
@@ -83,23 +82,22 @@ CREATE TABLE Operacao_Paciente_Enfermeiro_Medico_Sala (
 ALTER TABLE Operacao_Paciente_Enfermeiro_Medico_Sala ADD CONSTRAINT FK_Operacao_Paciente_Enfermeiro_Medico_Sala_1
   FOREIGN KEY (fk_Paciente_ID_Paciente)
   REFERENCES Paciente (ID_Paciente)
-  ON DELETE NO ACTION;
+  ON DELETE CASCADE ON UPDATE CASCADE;
  
 ALTER TABLE Operacao_Paciente_Enfermeiro_Medico_Sala ADD CONSTRAINT FK_Operacao_Paciente_Enfermeiro_Medico_Sala_2
   FOREIGN KEY (fk_Enfermeiro_ID_Enfermeiro)
   REFERENCES Enfermeiro (ID_Enfermeiro)
-  ON DELETE NO ACTION;
- 
+  ON DELETE CASCADE ON UPDATE CASCADE;
+
 ALTER TABLE Operacao_Paciente_Enfermeiro_Medico_Sala ADD CONSTRAINT FK_Operacao_Paciente_Enfermeiro_Medico_Sala_3
   FOREIGN KEY (fk_Medico_ID_Medico)
   REFERENCES Medico (ID_Medico)
-  ON DELETE NO ACTION;
- 
+  ON DELETE CASCADE ON UPDATE CASCADE;
+
 ALTER TABLE Operacao_Paciente_Enfermeiro_Medico_Sala ADD CONSTRAINT FK_Operacao_Paciente_Enfermeiro_Medico_Sala_4
   FOREIGN KEY (fk_Sala_ID_Sala)
   REFERENCES Sala (ID_Sala)
-  ON DELETE NO ACTION;
-
+  ON DELETE CASCADE ON UPDATE CASCADE;
 
 INSERT INTO Medico (Nome_Medico, CRM, CPF_Medico, Data_Nascimento_Medico, Genero_Medico, Telefone_Medico, Numero_Endereco_Medico, Complemento_Endereco_Medico, Nome_Endereco_Medico, Logradouro_Medico, E_mail_Medico, RG_Medico)
 VALUES ('Dr. Smith', '1234', '123.456.789-01', '1980-05-15', 'M', '12345678901', 42, 'Apt. 301', 'Medical Center', '123 Main St', 'dr.smith@email.com', 'AB123456');
@@ -145,10 +143,6 @@ VALUES ('Dra. Parker', '1122', '456.789.012-56', '1980-11-18', 'F', '45678901256
 
 INSERT INTO Medico (Nome_Medico, CRM, CPF_Medico, Data_Nascimento_Medico, Genero_Medico, Telefone_Medico, Numero_Endereco_Medico, Complemento_Endereco_Medico, Nome_Endereco_Medico, Logradouro_Medico, E_mail_Medico, RG_Medico)
 VALUES ('Dr. Evans', '3344', '567.890.123-67', '1977-07-07', 'M', '56789012367', 27, 'Suite 18', 'Health Haven', '890 Maple St', 'dr.evans@email.com', 'CD567890');
-
-
-
-
 
 -- Inserts for Paciente table
 INSERT INTO Paciente VALUES (1, '1990-01-01', 'Saudável', '12345678901', 'Rua A', 'Endereco A', 123, 'Apto 456', '123.456.789-01', 'AB123456', 'John Doe', 'M', 'john.doe@example.com');

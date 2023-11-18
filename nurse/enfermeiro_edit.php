@@ -13,12 +13,6 @@
         
         $result = $conn->query($sql);
     
-
-        session_start();
-        if (!isset($_SESSION["id"])) {
-            header("Location: ../index.php");
-        }
-
         $id = $_GET["ID_Enfermeiro"];
         $sql = "SELECT * FROM Enfermeiro WHERE ID_Enfermeiro = $id";
         $result = $conn->query($sql);

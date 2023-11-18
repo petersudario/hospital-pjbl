@@ -5,6 +5,7 @@
         <?php
         include("../connection.php");
         include("../components/nav.php");
+
         ?>
     </head>
     <body>
@@ -15,13 +16,8 @@
         </div>
         
     <?php
-        $sql = "SELECT * FROM Sala";
-        
-        $result = $conn->query($sql);
-
-
         $id = $_GET["ID_Sala"];
-        $sql = "SELECT * FROM Sala WHERE ID_Sala = $id";
+        $sql = "SELECT ID_Sala, Bloco_Sala, Numero_Sala, tipo.tipo FROM Sala INNER JOIN Tipo ON fk_Tipo_ID_tipo = ID_tipo WHERE ID_Sala = $id";
         $result = $conn->query($sql);
         
         if ($result->num_rows > 0) {
@@ -32,7 +28,7 @@
                 echo "id: $id<br>";
                 echo "Bloco: {$row['Bloco_Sala']}<br>";
                 echo "Número: {$row['Numero_Sala']}<br>";
-                echo "Tipo da sala: {$row['fk_Tipo_ID_tipo']}<br>";
+                echo "Tipo da sala: {$row['tipo']}<br>";
                 echo '</div>';
             }
             echo '</div>';
@@ -41,6 +37,7 @@
 
     ?>
     <div class="grid justify-center">
+    <form name="form1" id="form1" method="post" action="./sala_edit_php.php" class="max-w-md mx-auto">
 
         <div class="mb-4">
             <label for="txtBloco" class="block mb-2">Bloco:</label>
