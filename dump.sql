@@ -83,22 +83,22 @@ CREATE TABLE Operacao_Paciente_Enfermeiro_Medico_Sala (
 ALTER TABLE Operacao_Paciente_Enfermeiro_Medico_Sala ADD CONSTRAINT FK_Operacao_Paciente_Enfermeiro_Medico_Sala_1
   FOREIGN KEY (fk_Paciente_ID_Paciente)
   REFERENCES Paciente (ID_Paciente)
-  ON DELETE CASCADE;
+  ON DELETE NO ACTION;
  
 ALTER TABLE Operacao_Paciente_Enfermeiro_Medico_Sala ADD CONSTRAINT FK_Operacao_Paciente_Enfermeiro_Medico_Sala_2
   FOREIGN KEY (fk_Enfermeiro_ID_Enfermeiro)
   REFERENCES Enfermeiro (ID_Enfermeiro)
-  ON DELETE CASCADE;
+  ON DELETE NO ACTION;
  
 ALTER TABLE Operacao_Paciente_Enfermeiro_Medico_Sala ADD CONSTRAINT FK_Operacao_Paciente_Enfermeiro_Medico_Sala_3
   FOREIGN KEY (fk_Medico_ID_Medico)
   REFERENCES Medico (ID_Medico)
-  ON DELETE CASCADE;
+  ON DELETE NO ACTION;
  
 ALTER TABLE Operacao_Paciente_Enfermeiro_Medico_Sala ADD CONSTRAINT FK_Operacao_Paciente_Enfermeiro_Medico_Sala_4
   FOREIGN KEY (fk_Sala_ID_Sala)
   REFERENCES Sala (ID_Sala)
-  ON DELETE CASCADE;
+  ON DELETE NO ACTION;
 
 
 INSERT INTO Medico (Nome_Medico, CRM, CPF_Medico, Data_Nascimento_Medico, Genero_Medico, Telefone_Medico, Numero_Endereco_Medico, Complemento_Endereco_Medico, Nome_Endereco_Medico, Logradouro_Medico, E_mail_Medico, RG_Medico)
@@ -182,6 +182,8 @@ INSERT INTO Enfermeiro VALUES
 (11, 'Nurse Lee', 'K1234567', '1989-09-15', 'F', '44455566677', 'UV4445566', 'Suite 502', 502, 'Health Clinic', '789 Birch St', '44455566677', 'nurse.lee@example.com'),
 (12, 'Nurse Turner', 'L7890123', '1980-04-28', 'M', '77788899900', 'WX7778899', 'Apt 301', 301, 'General Hospital', '123 Pine St', '77788899900', 'nurse.turner@example.com'),
 (13, 'Nurse Davis', 'M3456789', '1992-11-15', 'F', '11122233344', 'YZ1112233', 'Suite 402', 402, 'Medical Center', '456 Oak St', '11122233344', 'nurse.davis@example.com'),
+(14, 'Nurse Cosmo', 'A7890123', '1980-04-28', 'M', '77788899900', 'WX7778899', 'Apt 301', 301, 'General Hospital', '123 Pine St', '77788899900', 'nurse.cosmo@example.com'),
+
 (15, 'Nurse Turner', 'O5678901', '1981-11-12', 'F', '77788899900', 'CD7778899', 'Suite 301', 301, 'General Hospital', '654 Pine St', '77788899900', 'nurse.turner@example.com');
 
 -- INSERTS FOR TABLE Tipo
@@ -235,6 +237,8 @@ INSERT INTO Operacao_Paciente_Enfermeiro_Medico_Sala (fk_Paciente_ID_Paciente, f
 INSERT INTO Operacao_Paciente_Enfermeiro_Medico_Sala (fk_Paciente_ID_Paciente, fk_Enfermeiro_ID_Enfermeiro, fk_Medico_ID_Medico, fk_Sala_ID_Sala) VALUES (11, 11, 11, 11);
 INSERT INTO Operacao_Paciente_Enfermeiro_Medico_Sala (fk_Paciente_ID_Paciente, fk_Enfermeiro_ID_Enfermeiro, fk_Medico_ID_Medico, fk_Sala_ID_Sala) VALUES (12, 12, 12, 12);
 INSERT INTO Operacao_Paciente_Enfermeiro_Medico_Sala (fk_Paciente_ID_Paciente, fk_Enfermeiro_ID_Enfermeiro, fk_Medico_ID_Medico, fk_Sala_ID_Sala) VALUES (13, 13, 13, 13);
+INSERT INTO Operacao_Paciente_Enfermeiro_Medico_Sala (fk_Paciente_ID_Paciente, fk_Enfermeiro_ID_Enfermeiro, fk_Medico_ID_Medico, fk_Sala_ID_Sala) VALUES (14, 14, 14, 14);
+
 INSERT INTO Operacao_Paciente_Enfermeiro_Medico_Sala (fk_Paciente_ID_Paciente, fk_Enfermeiro_ID_Enfermeiro, fk_Medico_ID_Medico, fk_Sala_ID_Sala) VALUES (15, 15, 15, 15);
 
 -- Inserts for users table

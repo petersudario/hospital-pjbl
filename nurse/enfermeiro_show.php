@@ -14,7 +14,7 @@ include("../components/nav.php");
             echo "<h2 class='text-2xl font-bold mb-4'>Dados do usuário</h2>";
             echo "<p class='text-lg mb-2'><strong>ID:</strong> $id</p>";
             echo "<p class='text-lg mb-2'><strong>Nome:</strong> {$row['Nome_Enfermeiro']}</p>";
-            echo "<p class='text-lg mb-2'><strong>CRM:</strong> {$row['CIP']}</p>";
+            echo "<p class='text-lg mb-2'><strong>Cip:</strong> {$row['CIP']}</p>";
             echo "<p class='text-lg mb-2'><strong>CPF:</strong> {$row['CPF_Enfermeiro']}</p>";
             echo "<p class='text-lg mb-2'><strong>Data de Nascimento:</strong> {$row['Data_Nascimento_Enfermeiro']}</p>";
             echo "<p class='text-lg mb-2'><strong>Gênero:</strong> {$row['Genero_Enfermeiro']}</p>";

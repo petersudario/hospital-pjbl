@@ -15,7 +15,7 @@
         </div>
         
     <?php
-        $sql = "SELECT * FROM Medico";
+        $sql = "SELECT * FROM Paciente";
         
         $result = $conn->query($sql);
     
@@ -25,8 +25,8 @@
             header("Location: index.php");
         }
 
-        $id = $_GET["ID_Medico"];
-        $sql = "SELECT * FROM Medico WHERE ID_Medico = $id";
+        $id = $_GET["ID_Paciente"];
+        $sql = "SELECT * FROM Paciente WHERE ID_Paciente = $id";
         $result = $conn->query($sql);
         
         if ($result->num_rows > 0) {
@@ -35,15 +35,15 @@
             while($row = $result->fetch_assoc()) {
                 echo '<div class="bg-white shadow-md rounded p-4 mb-4">';
                 echo "id: $id<br>";
-                echo "Nome: {$row['Nome_Medico']}<br>";
-                echo "CRM: {$row['CRM']}<br>";
-                echo "CPF: {$row['CPF_Medico']}<br>";
-                echo "Data de nascimento: {$row['Data_Nascimento_Medico']}<br>";
-                echo "Gênero: {$row['Genero_Medico']}<br>";
-                echo "Telefone: {$row['Telefone_Medico']}<br>";
-                echo "E-mail: {$row['E_mail_Medico']}<br>";
-                echo "RG: {$row['RG_Medico']}<br>";
-                echo "Endereço: ". $row['Logradouro_Medico']." ".$row['Nome_Endereco_Medico']." ".$row['Numero_Endereco_Medico']." ".$row['Complemento_Endereco_Medico'];
+                echo "Nome: {$row['Nome_Paciente']}<br>";
+                echo "Condicao: {$row['Condicao_Paciente']}<br>";
+                echo "CPF: {$row['CPF_Paciente']}<br>";
+                echo "Data de nascimento: {$row['Data_Nascimento_Paciente']}<br>";
+                echo "Gênero: {$row['Genero_Paciente']}<br>";
+                echo "Telefone: {$row['Telefone_Paciente']}<br>";
+                echo "E-mail: {$row['E_mail_Paciente']}<br>";
+                echo "RG: {$row['RG_Paciente']}<br>";
+                echo "Endereço: ". $row['Logradouro_Paciente']." ".$row['Nome_Endereco_Paciente']." ".$row['Numero_Endereco_Paciente']." ".$row['Complemento_Endereco_Paciente'];
                 echo '</div>';
             }
             echo '</div>';
@@ -58,8 +58,8 @@
             <input type="text" name="txtNome" id="txtNome" value="<?php ?>" class="w-full px-4 py-2 border rounded">
         </div>
         <div class="mb-4">
-            <label for="txtCrm" class="block mb-2">CRM:</label>
-            <input type="text" name="txtCrm" id="txtCrm" value="<?php ?>" class="w-full px-4 py-2 border rounded">
+            <label for="txtCondicao" class="block mb-2">Condicao:</label>
+            <input type="text" name="txtCondicao" id="txtCondicao" value="<?php ?>" class="w-full px-4 py-2 border rounded">
         </div>
         <input type="hidden" name="hidId" value="<?php echo $id ?>">
         <div class="mb-4">

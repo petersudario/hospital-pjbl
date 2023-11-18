@@ -1,5 +1,3 @@
-
-
 <nav class="flex items-center justify-between flex-wrap bg-blue-500 p-6">
     <div class="flex items-center flex-shrink-0 text-white mr-6">
         <span class="font-semibold text-xl tracking-tight">Sakurada Hospital</span>
@@ -19,6 +17,11 @@
             <form action="/hospital-pjbl/components/toNurse.php" method="POST">
                 <button type="submit" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
                     Nurses
+                </button>
+            </form>
+            <form action="/hospital-pjbl/components/toPatient.php" method="POST">
+                <button type="submit" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+                    Patients
                 </button>
             </form>
         </div>
