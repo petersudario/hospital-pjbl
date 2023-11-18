@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Cadastro de usuário</title>
+        <title>Edição de usuário</title>
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
         <?php
         include("../connection.php");
@@ -10,7 +10,7 @@
     <body>
         <div class="flex justify-center">
             <div>
-                <h1 class="text-2xl font-bold mb-4">Editar Médico</h1>
+                <h1 class="text-2xl font-bold mb-4">Editar Paciente</h1>
             </div>
         </div>
         
@@ -22,7 +22,7 @@
 
         session_start();
         if (!isset($_SESSION["id"])) {
-            header("Location: index.php");
+            header("Location: ../index.php");
         }
 
         $id = $_GET["ID_Paciente"];
@@ -75,7 +75,7 @@
             <input type="text" name="txtGenero" id="txtGenero" value="<?php ?>" class="w-full px-4 py-2 border rounded">
         </div>
         <div class="mb-4">
-            <label for="telTelefone" class="block mb-2">Telefone:</label>
+            <label for="telTelefone" class="block mb-2">Telefone de Emergência</label>
             <input type="tel" name="telTelefone" id="telTelefone" value="<?php ?>" class="w-full px-4 py-2 border rounded">
         </div>
         <div class="mb-4">

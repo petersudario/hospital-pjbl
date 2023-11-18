@@ -24,12 +24,12 @@
                     <div class="px-6 py-4">
                         <div class="font-bold text-xl mb-2"><?php echo $row["Nome_Paciente"] ?></div>
                         <p class="text-gray-700 text-base">
-                            Condicao: <?php echo $row["Condicao_Paciente"] ?><br>
+                            Condição: <?php echo $row["Condicao_Paciente"] ?><br>
                             CPF: <?php echo $row["CPF_Paciente"] ?><br>
                             Data Nascimento: <?php echo $row["Data_Nascimento_Paciente"] ?><br>
                             Gênero: <?php echo $row["Genero_Paciente"] ?><br>
                             RG: <?php echo $row["RG_Paciente"] ?><br>
-                            Telefone: <?php echo $row["Telefone_Paciente"] ?><br>
+                            Telefone de Emergência: <?php echo $row["Telefone_Emergencia_Paciente"] ?><br>
                             E-mail: <?php echo $row["E_mail_Paciente"] ?><br>
                             Endereço: <?php echo $row['Logradouro_Paciente']. " " .$row['Nome_Endereco_Paciente']. " ".$row['Numero_Endereco_Paciente']. " ".$row['Complemento_Endereco_Paciente'] ?>
                         </p>

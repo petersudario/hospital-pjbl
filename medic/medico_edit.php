@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Cadastro de usuário</title>
+        <title>Edição de usuário</title>
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
         <?php
         include("../connection.php");
@@ -22,7 +22,7 @@
 
         session_start();
         if (!isset($_SESSION["id"])) {
-            header("Location: index.php");
+            header("Location: ../index.php");
         }
 
         $id = $_GET["ID_Medico"];

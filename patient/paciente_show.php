@@ -18,7 +18,7 @@ include("../components/nav.php");
             echo "<p class='text-lg mb-2'><strong>CPF:</strong> {$row['CPF_Paciente']}</p>";
             echo "<p class='text-lg mb-2'><strong>Data de Nascimento:</strong> {$row['Data_Nascimento_Paciente']}</p>";
             echo "<p class='text-lg mb-2'><strong>Gênero:</strong> {$row['Genero_Paciente']}</p>";
-            echo "<p class='text-lg mb-2'><strong>Telefone:</strong> {$row['Telefone_Paciente']}</p>";
+            echo "<p class='text-lg mb-2'><strong>Telefone:</strong> {$row['Telefone_Emergencia_Paciente']}</p>";
             echo "<p class='text-lg mb-2'><strong>E-mail:</strong> {$row['E_mail_Paciente']}</p>";
             echo "<p class='text-lg mb-2'><strong>RG:</strong> {$row['RG_Paciente']}</p>";
             echo "<p class='text-lg mb-2'><strong>Endereço:</strong> " . $row['Logradouro_Paciente'] . " " . $row['Nome_Endereco_Paciente'] . " " . $row['Numero_Endereco_Paciente'] . " " . $row['Complemento_Endereco_Paciente'] . "</p>";

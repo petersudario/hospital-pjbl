@@ -24,6 +24,11 @@
                     Patients
                 </button>
             </form>
+            <form action="/hospital-pjbl/components/toRooms.php" method="POST">
+                <button type="submit" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+                    Rooms
+                </button>
+            </form>
         </div>
     </div>
 </nav>

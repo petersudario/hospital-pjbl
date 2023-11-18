@@ -37,7 +37,7 @@
                 <input type="text" name="txtGenero" id="txtGenero" value="<?php ?>" class="w-full px-4 py-2 border border-gray-300 rounded-md">
             </div>
             <div class="mb-4">
-                <label for="telTelefone" class="block">Telefone:</label>
+                <label for="telTelefone" class="block">Telefone de Emergência:</label>
                 <input type="tel" name="telTelefone" id="telTelefone" value="<?php ?>" class="w-full px-4 py-2 border border-gray-300 rounded-md">
             </div>
             <div class="mb-4">
