@@ -13,9 +13,9 @@ CREATE TABLE users(
 CREATE TABLE Medico (
   ID_Medico INT PRIMARY KEY,
   Nome_Medico VARCHAR(100),
-  CRM INT,
+  CRM VARCHAR(4),
   CPF_Medico VARCHAR(14),
-  Data_Nascimento_Medico TIMESTAMP,
+  Data_Nascimento_Medico DATE, -- Change the data type to DATE
   Genero_Medico CHAR,
   Telefone_Medico VARCHAR(11),
   Numero_Endereco_Medico INT,
@@ -106,8 +106,8 @@ INSERT INTO users (username, password, role) VALUES ('user2', 'password2', 'doct
 INSERT INTO users (username, password, role) VALUES ('user3', 'password3', 'nurse');
 
 -- INSERTS FOR TABLE Medico
-INSERT INTO Medico (ID_Medico, Nome_Medico, CRM, CPF_Medico, Data_Nascimento_Medico, Genero_Medico, Telefone_Medico, Numero_Endereco_Medico, Complemento_Endereco_Medico, Nome_Endereco_Medico, Logradouro_Medico, E_mail_Medico, RG_Medico) VALUES (1, 'Dr. John Doe', 123456, '123.456.789-00', '1980-01-01 00:00:00', 'M', '1234567890', 123, 'Complemento', 'Nome Endereco', 'Logradouro', 'email@example.com', '12345678');
-INSERT INTO Medico (ID_Medico, Nome_Medico, CRM, CPF_Medico, Data_Nascimento_Medico, Genero_Medico, Telefone_Medico, Numero_Endereco_Medico, Complemento_Endereco_Medico, Nome_Endereco_Medico, Logradouro_Medico, E_mail_Medico, RG_Medico) VALUES (2, 'Dr. Jane Doe', 654321, '987.654.321-00', '1985-01-01 00:00:00', 'F', '0987654321', 456, 'Complemento', 'Nome Endereco', 'Logradouro', 'email@example.com', '87654321');
+INSERT INTO Medico (ID_Medico, Nome_Medico, CRM, CPF_Medico, Data_Nascimento_Medico, Genero_Medico, Telefone_Medico, Numero_Endereco_Medico, Complemento_Endereco_Medico, Nome_Endereco_Medico, Logradouro_Medico, E_mail_Medico, RG_Medico) VALUES (1, 'Dr. John Doe', 1234, '123.456.789-00', '1980-01-01 00:00:00', 'M', '1234567890', 123, 'Complemento', 'Nome Endereco', 'Logradouro', 'email@example.com', '12345678');
+INSERT INTO Medico (ID_Medico, Nome_Medico, CRM, CPF_Medico, Data_Nascimento_Medico, Genero_Medico, Telefone_Medico, Numero_Endereco_Medico, Complemento_Endereco_Medico, Nome_Endereco_Medico, Logradouro_Medico, E_mail_Medico, RG_Medico) VALUES (2, 'Dr. Jane Doe', 5678, '987.654.321-00', '1985-01-01 00:00:00', 'F', '0987654321', 456, 'Complemento', 'Nome Endereco', 'Logradouro', 'email@example.com', '87654321');
 
 -- INSERTS FOR TABLE Paciente
 INSERT INTO Paciente (ID_Paciente, Data_Nascimento_Paciente, Condicao_Paciente, Telefone_Emergencia_Paciente, Logradouro_Paciente, Nome_Endereco_Paciente, Numero_Endereco_Paciente, Complemento_Endereco_Paciente, CPF_Paciente, RG_Paciente, Nome_Paciente, Genero_Paciente, E_mail_Paciente) VALUES (1, '1990-01-01 00:00:00', 'Stable', '1234567890', 'Logradouro', 'Nome Endereco', 123, 'Complemento', '123.456.789-00', '12345678', 'John Doe', 'M', 'email@example.com');

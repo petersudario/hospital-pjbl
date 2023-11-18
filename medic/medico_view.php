@@ -33,6 +33,7 @@
                             Endereço: <?php echo "Nome: ". $row['Logradouro_Medico']. " " .$row['Nome_Endereco_Medico']. " ".$row['Numero_Endereco_Medico']. " ".$row['Complemento_Endereco_Medico'] ?>
                         </p>
                         <a href="medico_show.php?ID_Medico=<?php echo $row['ID_Medico'] ?>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 inline-block">Ver detalhes</a>
+                        <a href="./medico_edit.php?ID_Medico=<?php echo $row['ID_Medico'] ?>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 inline-block">Editar</a>
                     </div>
                 </div>
             </div>
