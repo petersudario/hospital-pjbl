@@ -198,7 +198,6 @@ INSERT INTO Tipo VALUES
 (14, 'Internal Medicine'),
 (15, 'Family Medicine');
 
-
 INSERT INTO Sala VALUES 
 ('A', 101, 1, 1),
 ('B', 201, 2, 2),
@@ -253,7 +252,6 @@ INSERT INTO users (username, password, role) VALUES ('doctor4', 'doctor4_passwor
 INSERT INTO users (username, password, role) VALUES ('nurse4', 'nurse4_password', 'nurse');
 -- Add more user inserts as needed
 
-
 DELIMITER //
 
 CREATE PROCEDURE SalaDeCirurgia(IN SalaID INT)
@@ -285,6 +283,25 @@ BEGIN
     LEFT JOIN Paciente ON Operacao_Paciente_Enfermeiro_Medico_Sala.fk_Paciente_ID_Paciente = Paciente.ID_Paciente
     LEFT JOIN Enfermeiro ON Operacao_Paciente_Enfermeiro_Medico_Sala.fk_Enfermeiro_ID_Enfermeiro = Enfermeiro.ID_Enfermeiro
     WHERE Sala.ID_Sala = SalaID;
+END //
+
+DELIMITER ;
+
+CREATE TABLE Paciente_Log (
+  Log_ID INT AUTO_INCREMENT PRIMARY KEY,
+  Paciente_ID INT,
+  Log_Date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  Log_Message VARCHAR(255)
+);
+
+DELIMITER //
+
+CREATE TRIGGER paciente_creation_trigger
+AFTER INSERT ON Paciente
+FOR EACH ROW
+BEGIN
+  INSERT INTO Paciente_Log (Paciente_ID, Log_Message)
+  VALUES (NEW.ID_Paciente, CONCAT('Paciente created: ', NEW.Nome_Paciente));
 END //
 
 DELIMITER ;

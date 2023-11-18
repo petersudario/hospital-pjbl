@@ -19,7 +19,7 @@
             $numeroEndereco = $_POST["txtNumeroEndereco"];
             $complementoEndereco = $_POST["txtComplementoEndereco"];
             
-            $sql = "INSERT INTO paciente(Nome_Paciente, Condicao_Paciente, CPF_Paciente, Data_Nascimento_Paciente, Genero_Paciente, Telefone_Paciente,
+            $sql = "INSERT INTO paciente(Nome_Paciente, Condicao_Paciente, CPF_Paciente, Data_Nascimento_Paciente, Genero_Paciente, Telefone_Emergencia_Paciente,
              Numero_Endereco_Paciente, Complemento_Endereco_Paciente, Nome_Endereco_Paciente, Logradouro_Paciente, E_mail_Paciente, RG_Paciente ) 
              VALUES('$nome', '$condicao','$cpf', '$dataNascimento', '$genero', '$telefone', '$numeroEndereco', '$complementoEndereco', '$nomeEndereco', '$logradouro', '$email', '$rg')";
             $result = $conn->query($sql);
