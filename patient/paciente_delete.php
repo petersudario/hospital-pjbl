@@ -9,7 +9,7 @@
 ?>
 <script>
     alert('Usuário removido com sucesso!!!');
-    location.href = './paciente_view.php';
+    location.href = <?= header("Location: paciente_view.php") ?>;
 </script>
 <?php
         }

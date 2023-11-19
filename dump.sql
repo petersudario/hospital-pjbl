@@ -67,7 +67,7 @@ CREATE TABLE Tipo (
 CREATE TABLE Sala (
   Bloco_Sala CHAR,
   Numero_Sala INT,
-  ID_Sala INT PRIMARY KEY,
+  ID_Sala INT PRIMARY KEY AUTO_INCREMENT,
   fk_Tipo_ID_tipo INT,
   FOREIGN KEY (fk_Tipo_ID_tipo) REFERENCES Tipo (ID_tipo) ON DELETE CASCADE ON UPDATE CASCADE
 );
@@ -101,50 +101,35 @@ ALTER TABLE Operacao_Paciente_Enfermeiro_Medico_Sala ADD CONSTRAINT FK_Operacao_
 
 INSERT INTO Medico (Nome_Medico, CRM, CPF_Medico, Data_Nascimento_Medico, Genero_Medico, Telefone_Medico, Numero_Endereco_Medico, Complemento_Endereco_Medico, Nome_Endereco_Medico, Logradouro_Medico, E_mail_Medico, RG_Medico)
 VALUES ('Dr. Smith', '1234', '123.456.789-01', '1980-05-15', 'M', '12345678901', 42, 'Apt. 301', 'Medical Center', '123 Main St', 'dr.smith@email.com', 'AB123456');
-
 INSERT INTO Medico (Nome_Medico, CRM, CPF_Medico, Data_Nascimento_Medico, Genero_Medico, Telefone_Medico, Numero_Endereco_Medico, Complemento_Endereco_Medico, Nome_Endereco_Medico, Logradouro_Medico, E_mail_Medico, RG_Medico)
 VALUES ('Dra. Johnson', '5678', '987.654.321-01', '1975-10-20', 'F', '98765432101', 21, 'Suite 102', 'Health Plaza', '456 Oak St', 'dra.johnson@email.com', 'CD987654');
-
 INSERT INTO Medico (Nome_Medico, CRM, CPF_Medico, Data_Nascimento_Medico, Genero_Medico, Telefone_Medico, Numero_Endereco_Medico, Complemento_Endereco_Medico, Nome_Endereco_Medico, Logradouro_Medico, E_mail_Medico, RG_Medico)
 VALUES ('Dr. Davis', '9101', '543.210.987-65', '1988-02-08', 'M', '54321098765', 15, 'Floor 3', 'Wellness Tower', '789 Pine St', 'dr.davis@email.com', 'EF543210');
-
 INSERT INTO Medico (Nome_Medico, CRM, CPF_Medico, Data_Nascimento_Medico, Genero_Medico, Telefone_Medico, Numero_Endereco_Medico, Complemento_Endereco_Medico, Nome_Endereco_Medico, Logradouro_Medico, E_mail_Medico, RG_Medico)
 VALUES ('Dra. Martinez', '1122', '876.543.210-98', '1985-06-30', 'F', '87654321098', 30, 'Apt. 15', 'Care Center', '567 Elm St', 'dra.martinez@email.com', 'GH876543');
-
 INSERT INTO Medico (Nome_Medico, CRM, CPF_Medico, Data_Nascimento_Medico, Genero_Medico, Telefone_Medico, Numero_Endereco_Medico, Complemento_Endereco_Medico, Nome_Endereco_Medico, Logradouro_Medico, E_mail_Medico, RG_Medico)
 VALUES ('Dr. Wilson', '3344', '654.321.098-76', '1990-12-12', 'M', '65432109876', 50, 'Suite 5', 'MediHub', '890 Maple St', 'dr.wilson@email.com', 'IJ654321');
-
 INSERT INTO Medico (Nome_Medico, CRM, CPF_Medico, Data_Nascimento_Medico, Genero_Medico, Telefone_Medico, Numero_Endereco_Medico, Complemento_Endereco_Medico, Nome_Endereco_Medico, Logradouro_Medico, E_mail_Medico, RG_Medico)
 VALUES ('Dra. Lee', '5566', '123.987.456-32', '1982-09-25', 'F', '12398745632', 12, 'Floor 7', 'Life Clinic', '345 Oak St', 'dra.lee@email.com', 'KL123987');
-
 INSERT INTO Medico (Nome_Medico, CRM, CPF_Medico, Data_Nascimento_Medico, Genero_Medico, Telefone_Medico, Numero_Endereco_Medico, Complemento_Endereco_Medico, Nome_Endereco_Medico, Logradouro_Medico, E_mail_Medico, RG_Medico)
 VALUES ('Dr. Baker', '7788', '789.456.123-54', '1978-04-18', 'M', '78945612354', 25, 'Apt. 10', 'Healthy Living', '678 Pine St', 'dr.baker@email.com', 'MN789456');
-
 INSERT INTO Medico (Nome_Medico, CRM, CPF_Medico, Data_Nascimento_Medico, Genero_Medico, Telefone_Medico, Numero_Endereco_Medico, Complemento_Endereco_Medico, Nome_Endereco_Medico, Logradouro_Medico, E_mail_Medico, RG_Medico)
 VALUES ('Dra. Anderson', '9900', '987.654.321-99', '1983-11-08', 'F', '98765432199', 18, 'Suite 20', 'Wellbeing Center', '876 Elm St', 'dra.anderson@email.com', 'OP987654');
-
 INSERT INTO Medico (Nome_Medico, CRM, CPF_Medico, Data_Nascimento_Medico, Genero_Medico, Telefone_Medico, Numero_Endereco_Medico, Complemento_Endereco_Medico, Nome_Endereco_Medico, Logradouro_Medico, E_mail_Medico, RG_Medico)
 VALUES ('Dr. Taylor', '1122', '456.789.012-34', '1987-07-22', 'M', '45678901234', 35, 'Apt. 12', 'Healing Haven', '345 Maple St', 'dr.taylor@email.com', 'QR456789');
-
 INSERT INTO Medico (Nome_Medico, CRM, CPF_Medico, Data_Nascimento_Medico, Genero_Medico, Telefone_Medico, Numero_Endereco_Medico, Complemento_Endereco_Medico, Nome_Endereco_Medico, Logradouro_Medico, E_mail_Medico, RG_Medico)
 VALUES ('Dra. White', '3344', '345.678.901-23', '1986-03-14', 'F', '34567890123', 28, 'Floor 4', 'Holistic Health', '456 Oak St', 'dra.white@email.com', 'ST345678');
-
 INSERT INTO Medico (Nome_Medico, CRM, CPF_Medico, Data_Nascimento_Medico, Genero_Medico, Telefone_Medico, Numero_Endereco_Medico, Complemento_Endereco_Medico, Nome_Endereco_Medico, Logradouro_Medico, E_mail_Medico, RG_Medico)
 VALUES ('Dr. Adams', '5566', '567.890.123-45', '1984-08-30', 'M', '56789012345', 23, 'Suite 8', 'Wellness Hub', '789 Pine St', 'dr.adams@email.com', 'UV567890');
-
 INSERT INTO Medico (Nome_Medico, CRM, CPF_Medico, Data_Nascimento_Medico, Genero_Medico, Telefone_Medico, Numero_Endereco_Medico, Complemento_Endereco_Medico, Nome_Endereco_Medico, Logradouro_Medico, E_mail_Medico, RG_Medico)
 VALUES ('Dra. Turner', '7788', '234.567.890-12', '1979-12-03', 'F', '23456789012', 17, 'Apt. 7', 'Revitalize Clinic', '890 Elm St', 'dra.turner@email.com', 'WX234567');
-
 INSERT INTO Medico (Nome_Medico, CRM, CPF_Medico, Data_Nascimento_Medico, Genero_Medico, Telefone_Medico, Numero_Endereco_Medico, Complemento_Endereco_Medico, Nome_Endereco_Medico, Logradouro_Medico, E_mail_Medico, RG_Medico)
 VALUES ('Dr. Hughes', '9900', '345.678.901-34', '1981-05-10', 'M', '34567890134', 40, 'Floor 6', 'Complete Care', '567 Oak St', 'dr.hughes@email.com', 'YZ345678');
-
 INSERT INTO Medico (Nome_Medico, CRM, CPF_Medico, Data_Nascimento_Medico, Genero_Medico, Telefone_Medico, Numero_Endereco_Medico, Complemento_Endereco_Medico, Nome_Endereco_Medico, Logradouro_Medico, E_mail_Medico, RG_Medico)
 VALUES ('Dra. Parker', '1122', '456.789.012-56', '1980-11-18', 'F', '45678901256', 32, 'Apt. 25', 'Healing Hands', '678 Pine St', 'dra.parker@email.com', 'AB456789');
-
 INSERT INTO Medico (Nome_Medico, CRM, CPF_Medico, Data_Nascimento_Medico, Genero_Medico, Telefone_Medico, Numero_Endereco_Medico, Complemento_Endereco_Medico, Nome_Endereco_Medico, Logradouro_Medico, E_mail_Medico, RG_Medico)
 VALUES ('Dr. Evans', '3344', '567.890.123-67', '1977-07-07', 'M', '56789012367', 27, 'Suite 18', 'Health Haven', '890 Maple St', 'dr.evans@email.com', 'CD567890');
 
--- Inserts for Paciente table
 INSERT INTO Paciente VALUES (1, '1990-01-01', 'Saudável', '12345678901', 'Rua A', 'Endereco A', 123, 'Apto 456', '123.456.789-01', 'AB123456', 'John Doe', 'M', 'john.doe@example.com');
 INSERT INTO Paciente VALUES (2, '1985-05-15', 'Doente', '98765432109', 'Rua B', 'Endereco B', 456, 'Casa 789', '987.654.321-09', 'CD987654', 'Jane Doe', 'F', 'jane.doe@example.com');
 INSERT INTO Paciente VALUES (3, '1988-08-22', 'Saudável', '11122233344', 'Rua C', 'Endereco C', 789, 'Apto 101', '111.222.333-44', 'EF111222', 'Bob Smith', 'M', 'bob.smith@example.com');
@@ -161,7 +146,6 @@ INSERT INTO Paciente VALUES (13, '1986-08-14', 'Saudável', '22233344455', 'Rua 
 INSERT INTO Paciente VALUES (14, '1996-05-20', 'Doente', '55544433322', 'Rua N', 'Endereco N', 1111, 'Casa 1212', '555.444.333-22', 'AB111222', 'Mia Turner', 'F', 'mia.turner@example.com');
 INSERT INTO Paciente VALUES (15, '1981-12-10', 'Saudável', '88899900011', 'Rua O', 'Endereco O', 1212, 'Apto 1313', '888.999.000-11', 'CD111222', 'Nathan Brown', 'M', 'nathan.brown@example.com');
 
--- INSERTS FOR TABLE Enfermeiro
 INSERT INTO Enfermeiro VALUES 
 (1, 'Nurse Anderson', 'A1234567', '1988-12-03', 'F', '45678901234', 'AB9876543', 'Apt 501', 501, 'Medical Center', '789 Maple St', '98765432101', 'nurse.anderson@example.com'),
 (2, 'Nurse Martinez', 'B9876543', '1980-06-18', 'M', '12345678901', 'CD1234567', 'Suite 301', 301, 'Health Clinic', '654 Birch St', '12345678901', 'nurse.martinez@example.com'),
@@ -177,10 +161,8 @@ INSERT INTO Enfermeiro VALUES
 (12, 'Nurse Turner', 'L7890123', '1980-04-28', 'M', '77788899900', 'WX7778899', 'Apt 301', 301, 'General Hospital', '123 Pine St', '77788899900', 'nurse.turner@example.com'),
 (13, 'Nurse Davis', 'M3456789', '1992-11-15', 'F', '11122233344', 'YZ1112233', 'Suite 402', 402, 'Medical Center', '456 Oak St', '11122233344', 'nurse.davis@example.com'),
 (14, 'Nurse Cosmo', 'A7890123', '1980-04-28', 'M', '77788899900', 'WX7778899', 'Apt 301', 301, 'General Hospital', '123 Pine St', '77788899900', 'nurse.cosmo@example.com'),
-
 (15, 'Nurse Turner', 'O5678901', '1981-11-12', 'F', '77788899900', 'CD7778899', 'Suite 301', 301, 'General Hospital', '654 Pine St', '77788899900', 'nurse.turner@example.com');
 
--- INSERTS FOR TABLE Tipo
 INSERT INTO Tipo VALUES 
 (1, 'Emergency'),
 (2, 'Surgery'),
@@ -215,8 +197,6 @@ INSERT INTO Sala VALUES
 ('N', 1401, 14, 14),
 ('O', 1501, 15, 15);
 
--- INSERTS FOR TABLE Operacao_Paciente_Enfermeiro_Medico_Sala
--- Inserts for Operacao_Paciente_Enfermeiro_Medico_Sala table
 INSERT INTO Operacao_Paciente_Enfermeiro_Medico_Sala (fk_Paciente_ID_Paciente, fk_Enfermeiro_ID_Enfermeiro, fk_Medico_ID_Medico, fk_Sala_ID_Sala) VALUES (1, 1, 1, 1);
 INSERT INTO Operacao_Paciente_Enfermeiro_Medico_Sala (fk_Paciente_ID_Paciente, fk_Enfermeiro_ID_Enfermeiro, fk_Medico_ID_Medico, fk_Sala_ID_Sala) VALUES (2, 2, 2, 2);
 INSERT INTO Operacao_Paciente_Enfermeiro_Medico_Sala (fk_Paciente_ID_Paciente, fk_Enfermeiro_ID_Enfermeiro, fk_Medico_ID_Medico, fk_Sala_ID_Sala) VALUES (3, 3, 3, 3);
@@ -231,26 +211,12 @@ INSERT INTO Operacao_Paciente_Enfermeiro_Medico_Sala (fk_Paciente_ID_Paciente, f
 INSERT INTO Operacao_Paciente_Enfermeiro_Medico_Sala (fk_Paciente_ID_Paciente, fk_Enfermeiro_ID_Enfermeiro, fk_Medico_ID_Medico, fk_Sala_ID_Sala) VALUES (12, 12, 12, 12);
 INSERT INTO Operacao_Paciente_Enfermeiro_Medico_Sala (fk_Paciente_ID_Paciente, fk_Enfermeiro_ID_Enfermeiro, fk_Medico_ID_Medico, fk_Sala_ID_Sala) VALUES (13, 13, 13, 13);
 INSERT INTO Operacao_Paciente_Enfermeiro_Medico_Sala (fk_Paciente_ID_Paciente, fk_Enfermeiro_ID_Enfermeiro, fk_Medico_ID_Medico, fk_Sala_ID_Sala) VALUES (14, 14, 14, 14);
-
 INSERT INTO Operacao_Paciente_Enfermeiro_Medico_Sala (fk_Paciente_ID_Paciente, fk_Enfermeiro_ID_Enfermeiro, fk_Medico_ID_Medico, fk_Sala_ID_Sala) VALUES (15, 15, 15, 15);
 
--- Inserts for users table
-INSERT INTO users (username, password, role) VALUES ('admin', 'admin_password', 'admin');
-INSERT INTO users (username, password, role) VALUES ('doctor1', 'doctor1_password', 'doctor');
-INSERT INTO users (username, password, role) VALUES ('nurse1', 'nurse1_password', 'nurse');
-INSERT INTO users (username, password, role) VALUES ('receptionist1', 'receptionist1_password', 'receptionist');
-INSERT INTO users (username, password, role) VALUES ('patient1', 'patient1_password', 'patient');
-INSERT INTO users (username, password, role) VALUES ('doctor2', 'doctor2_password', 'doctor');
-INSERT INTO users (username, password, role) VALUES ('nurse2', 'nurse2_password', 'nurse');
-INSERT INTO users (username, password, role) VALUES ('receptionist2', 'receptionist2_password', 'receptionist');
-INSERT INTO users (username, password, role) VALUES ('patient2', 'patient2_password', 'patient');
-INSERT INTO users (username, password, role) VALUES ('doctor3', 'doctor3_password', 'doctor');
-INSERT INTO users (username, password, role) VALUES ('nurse3', 'nurse3_password', 'nurse');
-INSERT INTO users (username, password, role) VALUES ('receptionist3', 'receptionist3_password', 'receptionist');
-INSERT INTO users (username, password, role) VALUES ('patient3', 'patient3_password', 'patient');
-INSERT INTO users (username, password, role) VALUES ('doctor4', 'doctor4_password', 'doctor');
-INSERT INTO users (username, password, role) VALUES ('nurse4', 'nurse4_password', 'nurse');
--- Add more user inserts as needed
+INSERT INTO users (username, password, role) VALUES ('doctor', '1234', 'admin');
+INSERT INTO users (username, password, role) VALUES ('nurse', '1234', 'admin');
+INSERT INTO users (username, password, role) VALUES ('patient', '1234', 'patient');
+
 
 DELIMITER //
 
@@ -305,3 +271,14 @@ BEGIN
 END //
 
 DELIMITER ;
+
+-- Supondo que você queira informações sobre a sala com ID_Sala = 1
+SELECT Paciente.*, Medico.Nome_Medico, Enfermeiro.Nome_Enfermeiro, Sala.Bloco_Sala, Sala.Numero_Sala
+FROM Operacao_Paciente_Enfermeiro_Medico_Sala
+JOIN Paciente ON Operacao_Paciente_Enfermeiro_Medico_Sala.fk_Paciente_ID_Paciente = Paciente.ID_Paciente
+JOIN Medico ON Operacao_Paciente_Enfermeiro_Medico_Sala.fk_Medico_ID_Medico = Medico.ID_Medico
+JOIN Enfermeiro ON Operacao_Paciente_Enfermeiro_Medico_Sala.fk_Enfermeiro_ID_Enfermeiro = Enfermeiro.ID_Enfermeiro
+JOIN Sala ON Operacao_Paciente_Enfermeiro_Medico_Sala.fk_Sala_ID_Sala = Sala.ID_Sala
+WHERE Sala.ID_Sala = 1;
+
+

@@ -1,13 +1,8 @@
-<html>
-    <head>
-        <title>Edição de usuário</title>
-        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
         <?php
         include("../connection.php");
-        include("../components/nav.php");
         ?>
-    </head>
-    <body>
+
         <div class="flex justify-center">
             <div>
                 <h1 class="text-2xl font-bold mb-4">Editar Médico</h1>

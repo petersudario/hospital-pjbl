@@ -1,23 +1,19 @@
-<html>
-    <head>
-        <title>Dados do usuário</title>
-    </head>
-    <body>
+
         <?php
             include("../connection.php");
 
-            $nome = $_POST["txtNome"];
-            $crm = $_POST["txtCrm"];
-            $cpf = $_POST["txtCpf"];
-            $dataNascimento = $_POST["dtNascimento"];
-            $genero = $_POST["txtGenero"];
-            $telefone = $_POST["telTelefone"];
-            $email = $_POST["email"];
-            $rg = $_POST["txtRg"];
-            $logradouro = $_POST["txtLogradouro"];
-            $nomeEndereco = $_POST["txtNomeEndereco"];
-            $numeroEndereco = $_POST["txtNumeroEndereco"];
-            $complementoEndereco = $_POST["txtComplementoEndereco"];
+            $nome = $_GET["txtNome"];
+            $crm = $_GET["txtCrm"];
+            $cpf = $_GET["txtCpf"];
+            $dataNascimento = $_GET["dtNascimento"];
+            $genero = $_GET["txtGenero"];
+            $telefone = $_GET["telTelefone"];
+            $email = $_GET["email"];
+            $rg = $_GET["txtRg"];
+            $logradouro = $_GET["txtLogradouro"];
+            $nomeEndereco = $_GET["txtNomeEndereco"];
+            $numeroEndereco = $_GET["txtNumeroEndereco"];
+            $complementoEndereco = $_GET["txtComplementoEndereco"];
             
             $sql = "INSERT INTO medico(Nome_Medico, CRM, CPF_Medico, Data_Nascimento_Medico, Genero_Medico, Telefone_Medico,
              Numero_Endereco_Medico, Complemento_Endereco_Medico, Nome_Endereco_Medico, Logradouro_Medico, E_mail_Medico, RG_Medico ) 
@@ -27,8 +23,8 @@
             if($result === TRUE) {
 ?>
 <script>
-    alert('Usuário cadastrado com sucesso!!!');
-    location.href = 'medico_view.php';
+    alert('Médico cadastrado com sucesso!!!');
+    location.href = <?= header("Location: medico_view.php") ?>;
 </script>
 <?php
             }

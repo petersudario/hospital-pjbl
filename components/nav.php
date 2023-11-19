@@ -1,3 +1,4 @@
+<script src="https://cdn.tailwindcss.com"></script>
 <nav class="flex items-center justify-between flex-wrap bg-blue-500 p-6">
     <div class="flex items-center flex-shrink-0 text-white mr-6">
         <span class="font-semibold text-xl tracking-tight">Sakurada Hospital</span>
@@ -29,6 +30,15 @@
                     Rooms
                 </button>
             </form>
+            <?php
+                if (isset($_SESSION['id_username'])) {
+                    echo '<form action="/hospital-pjbl/components/logout.php" method="POST">
+                    <button type="submit" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+                        Logout
+                    </button>';
+                }
+            ?>
+
         </div>
     </div>
 </nav>

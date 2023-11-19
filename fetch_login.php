@@ -1,5 +1,9 @@
 <?php
-    include("connection.php");
+    include(dirname(__DIR__) . '/hospital-pjbl/'  . "connection.php");
+    if(!isset($_SESSION["id_username"])){
+
+        $_SESSION["id_username"];
+    }
 
     $username = $_POST["username"];
     $password = $_POST["password"];
@@ -10,7 +14,7 @@
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             if ($row["password"] == $password) {
-                header("Location: home.php");
+                header("Location: index.php");
                 session_start();
                 $_SESSION["id_username"] = intval($row["id_username"]);
                 $_SESSION["role"] = $row["role"];

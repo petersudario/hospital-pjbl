@@ -1,6 +1,5 @@
 <?php
 include("../connection.php");
-include("../components/nav.php");
 
 ?>
 <div class="bg-white rounded-lg shadow-lg p-8 mx-auto max-w-7xl mt-[50px]">

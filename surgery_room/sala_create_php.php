@@ -1,35 +1,14 @@
-<html>
-    <head>
-        <title>Dados da sala</title>
-    </head>
-    <body>
-        <?php
-            include("../connection.php");
+<?php
 
-            $bloco = $_POST["txtBloco"];
-            $numero = $_POST["txtNumero"];
-            $tipo = $_POST["txtTipof"];
-            
-            $sql = "INSERT INTO Sala(Bloco_Sala, Numero_Sala, fk_Tipo_ID_tipo) 
-             VALUES('$bloco', '$numero','$tipo')";
-            $result = $conn->query($sql);
+if(!isset($_SESSION["id_username"]) && $_SERVER['REQUEST_URI'] != "/hospital-pjbl/login.php"){
 
-            if($result === TRUE) {
+    header("https://www.google.com.br/");
+
+} else {
+    header("https://www.google.com.br/");
+}
 ?>
 <script>
     alert('Sala cadastrada com sucesso!!!');
-    location.href = 'sala_view.php';
+    location.href = <?= header("Location: sala_view.php") ?>;
 </script>
-<?php
-            }
-            else {
-?>
-<script>
-    alert('Algo não deu certo...');
-    history.go(-1);
-</script>
-<?php
-            }
-?>
-    </body>
-</html>
