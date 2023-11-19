@@ -1,19 +1,19 @@
 <?php
 include("../connection.php");
 
-$id = $_POST["hidId"];
-$nome = $_POST["txtNome"];
-$cip = $_POST["txtCip"];
-$cpf = $_POST["txtCpf"];
-$dataNascimento = $_POST["dtNascimento"];
-$genero = $_POST["txtGenero"];
-$telefone = $_POST["telTelefone"];
-$email = $_POST["email"];
-$rg = $_POST["txtRg"];
-$logradouro = $_POST["txtLogradouro"];
-$nomeEndereco = $_POST["txtNomeEndereco"];
-$numeroEndereco = $_POST["txtNumeroEndereco"];
-$complementoEndereco = $_POST["txtComplementoEndereco"];
+$id = $_GET["hidId"];
+$nome = $_GET["txtNome"];
+$cip = $_GET["txtCip"];
+$cpf = $_GET["txtCpf"];
+$dataNascimento = $_GET["dtNascimento"];
+$genero = $_GET["txtGenero"];
+$telefone = $_GET["telTelefone"];
+$email = $_GET["email"];
+$rg = $_GET["txtRg"];
+$logradouro = $_GET["txtLogradouro"];
+$nomeEndereco = $_GET["txtNomeEndereco"];
+$numeroEndereco = $_GET["txtNumeroEndereco"];
+$complementoEndereco = $_GET["txtComplementoEndereco"];
 
 $sql = "UPDATE Enfermeiro SET 
                         Nome_Enfermeiro = '$nome',

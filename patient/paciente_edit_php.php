@@ -1,27 +1,22 @@
-<html>
-    <head>
-        <title>Dados do usuário</title>
-    </head>
-    <body>
-        <?php
-            include("../connection.php");
+<?php
+include("../connection.php");
 
 
-            $id = $_POST["hidId"];
-            $nome = $_POST["txtNome"];
-            $condicao = $_POST["txtCondicao"];
-            $cpf = $_POST["txtCpf"];
-            $dataNascimento = $_POST["dtNascimento"];
-            $genero = $_POST["txtGenero"];
-            $telefone = $_POST["telTelefone"];
-            $email = $_POST["email"];
-            $rg = $_POST["txtRg"];
-            $logradouro = $_POST["txtLogradouro"];
-            $nomeEndereco = $_POST["txtNomeEndereco"];
-            $numeroEndereco = $_POST["txtNumeroEndereco"];
-            $complementoEndereco = $_POST["txtComplementoEndereco"];
+$id = $_GET["hidId"];
+$nome = $_GET["txtNome"];
+$condicao = $_GET["txtCondicao"];
+$cpf = $_GET["txtCpf"];
+$dataNascimento = $_GET["dtNascimento"];
+$genero = $_GET["txtGenero"];
+$telefone = $_GET["telTelefone"];
+$email = $_GET["email"];
+$rg = $_GET["txtRg"];
+$logradouro = $_GET["txtLogradouro"];
+$nomeEndereco = $_GET["txtNomeEndereco"];
+$numeroEndereco = $_GET["txtNumeroEndereco"];
+$complementoEndereco = $_GET["txtComplementoEndereco"];
 
-            $sql = "UPDATE paciente SET 
+$sql = "UPDATE paciente SET 
                         Nome_Paciente = '$nome',
                         Condicao_Paciente = '$condicao',
                         CPF_Paciente = '$cpf',
@@ -35,25 +30,22 @@
                         E_mail_Paciente = '$email',
                         RG_Paciente = '$rg' 
                     WHERE ID_Paciente=$id";
-        
-            $result = $conn->query($sql);
 
-            if ($result === TRUE) {
+$result = $conn->query($sql);
+
+if ($result === TRUE) {
+    ?>
+    <script>
+        alert('Usuário cadastrado com sucesso!!!');
+        location.href = <?= header("Location: paciente_view.php") ?>;
+    </script>
+    <?php
+} else {
+    ?>
+    <script>
+        alert('Algo não deu certo...');
+        history.go(-1);
+    </script>
+    <?php
+}
 ?>
-<script>
-    alert('Usuário editado com sucesso!!!');
-    location.href = 'paciente_view.php';
-</script>
-<?php
-            }
-            else {
-?>
-<script>
-    alert('Algo não deu certo...');
-    history.go(-1);
-</script>
-<?php
-            }
-?>
-    </body>
-</html>

@@ -2,10 +2,10 @@
 include("../connection.php");
 
 
-$id = $_POST["hidId"];
-$bloco = $_POST["txtBloco"];
-$numero = $_POST["txtNumero"];
-$tipo = $_POST["txtTipo"];
+$id = $_GET["hidId"];
+$bloco = $_GET["txtBloco"];
+$numero = $_GET["txtNumero"];
+$tipo = $_GET["txtTipo"];
 
 $sql = "UPDATE Sala SET 
                         Bloco_Sala = '$bloco',
